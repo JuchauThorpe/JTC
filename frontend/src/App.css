@@ -1,0 +1,132 @@
+/* ── Overall shell ───────────────────────────────────────────── */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #0a0a0f;
+}
+
+/* ── Top navigation bar ──────────────────────────────────────── */
+.top-nav {
+  height: 60px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+}
+
+/* ── Top menu ────────────────────────────────────────────────── */
+.top-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 2rem;
+}
+
+.top-menu-item {
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+}
+
+.top-menu-item:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.top-menu-item--active {
+  color: #ffffff;
+  background: rgba(167, 139, 250, 0.15);
+}
+
+/* ── Logo ────────────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Body row (sidebar + main) ───────────────────────────────── */
+.app-body {
+  display: flex;
+  flex: 1;
+}
+
+/* ── Left sidebar ────────────────────────────────────────────── */
+.left-nav {
+  width: 220px;
+  background: rgba(255, 255, 255, 0.03);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+/* ── Inner pages ─────────────────────────────────────────────── */
+.page {
+  flex: 1;
+  padding: 3rem;
+  color: #e2e8f0;
+}
+
+.page h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page p {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ── Holding page (main content area) ───────────────────────── */
+.holding-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #1a0a2e 0%, #0a0a0f 70%);
+}
+
+.content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.content h1 {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}

@@ -4,39 +4,35 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-JTC is a holding-page web application. It consists of a React frontend (Vite) and a Node.js/Express backend running as two separate processes.
+JTC is a frontend-only React web application. There is no backend — all content is static. The `backend/` folder exists but is not used.
 
 ## Dev Commands
 
-**Backend** (port 3001):
-```powershell
-cd backend
-npm start        # production
-npm run dev      # nodemon watch mode
-```
-
-**Frontend** (port 3000):
 ```powershell
 cd frontend
-npm run dev      # Vite dev server with HMR
+npm run dev      # Vite dev server on port 3000 with HMR
 npm run build    # production build to frontend/dist
-npm run preview  # preview the production build
+npm run preview  # preview the production build locally
 ```
-
-Both must run simultaneously for full functionality. The Vite dev server proxies all `/api/*` requests to the backend on port 3001.
 
 ## Architecture
 
-The frontend and backend are completely separate Node projects (`frontend/package.json`, `backend/package.json`) with no shared code or monorepo tooling.
+Single React app built with Vite. Routing is handled client-side with `react-router-dom`.
 
-**Data flow:** `App.jsx` fetches `GET /api/hello` on mount → Express returns `{ message: "JTC" }` → displayed as the page heading. The fetch has a silent catch that falls back to the static string "JTC", so the UI works even if the backend is down.
+**Routes:**
 
-**API routes** are all defined directly in `backend/server.js`. There is no router layer yet.
+| Path | Component |
+|------|-----------|
+| `/` | Holding page (`App.jsx` → `HoldingPage`) |
+| `/who-we-are` | `src/pages/WhoWeAre.jsx` |
+| `/services` | `src/pages/Services.jsx` |
+| `/testimonials` | `src/pages/Testimonials.jsx` |
+| `/contact-us` | `src/pages/ContactUs.jsx` |
 
-**Styling** uses plain CSS files (`App.css`, `index.css`) — no CSS framework or preprocessor. The holding page uses a dark radial gradient background with a CSS `background-clip: text` gradient heading.
+**Styling** uses plain CSS (`App.css`, `index.css`) — no framework. Dark theme with a radial gradient background and a `background-clip: text` gradient heading on the holding page.
 
-## Environment Variables
+**Navigation** is in `src/TopNav.jsx` (nav items array) and `src/Logo.jsx` (links to `/`).
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `PORT`   | `3001`  | Backend listening port |
+## Deployment
+
+Build output is `frontend/dist/` — deploy this folder to any static host (IONOS, Vercel, Netlify, etc.). Ensure the host is configured to redirect all routes to `index.html` to support React Router.

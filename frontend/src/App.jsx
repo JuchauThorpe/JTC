@@ -6,12 +6,15 @@ import WhoWeAre from './pages/WhoWeAre';
 import Services from './pages/Services';
 import Testimonials from './pages/Testimonials';
 import ContactUs from './pages/ContactUs';
+import logoImg from './assets/logo.jpg';
 
 function HoldingPage() {
   return (
     <main className="holding-page">
       <div className="content">
-        <h1>JTC</h1>
+        <div className="content-logo-card">
+          <img src={logoImg} alt="Juchau-Thorpe Consulting" className="content-logo" />
+        </div>
         <p>Something exciting is on its way.</p>
       </div>
     </main>

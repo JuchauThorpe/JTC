@@ -36,12 +36,12 @@
 }
 
 .top-menu-item:hover {
-  color: #1e3a5f;
+  color: #2c4566;
   background: #f1f5f9;
 }
 
 .top-menu-item--active {
-  color: #1e3a5f;
+  color: #2c4566;
   background: #e2eaf4;
 }
 
@@ -84,7 +84,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  background: linear-gradient(135deg, #2c4566, #1f6fa8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -110,11 +110,26 @@
   padding: 2rem;
 }
 
+.content-logo-card {
+  display: inline-block;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.content-logo {
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
 .content h1 {
   font-size: clamp(3rem, 10vw, 7rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #a78bfa, #60a5fa, #f472b6);
+  background: linear-gradient(135deg, #2c4566, #1f6fa8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
